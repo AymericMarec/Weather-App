@@ -13,6 +13,7 @@ sealed class Program
         Env.Load();                 // Loading .env file to get the api key
         new Models.Settings();      // Init Settings file if doesnt exist
         // Models.WeatherResultWeek resultweek = Api.GetInfoByName5Day("Paris");
+        // resultweek.GetDataMidTime();
         // Console.WriteLine(resultweek.cnt);
 
         // Models.WeatherResultDay resultday = Api.GetInfoByNameToday("Paris");
