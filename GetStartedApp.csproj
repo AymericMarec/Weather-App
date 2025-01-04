@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Page Include="MainWindow.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
