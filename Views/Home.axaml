@@ -31,7 +31,7 @@
         <!-- Barre latérale à gauche -->
         <Border Background="#666666" VerticalAlignment="Stretch" Grid.Column="0" />
 
-        <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17"
+        <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17" Width="650" Height="500"
         HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -189,8 +189,12 @@
                     <Border Background="#77666666" Width="410" CornerRadius="10" Height="98" Margin="0,0,0,16"
                     HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
-                            <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Left" Margin="10" Foreground="White"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Lundi" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                                <TextBlock Text="Nuageux" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            </StackPanel>
+                            <Image Source="/Assets/img/SouthDirection.png" Width="45" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </Border>
 
