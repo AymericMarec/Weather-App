@@ -7,7 +7,10 @@
         x:Class="GetStartedApp.Views.Home"
         x:DataType="vm:HomeViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="GetStartedApp">
+        Title="Weather App"
+        Width="1150"
+        Height="690"
+        CanResize="False">
 
    <!-- Dégradé appliqué directement à la fenêtre -->
     <Window.Background>
