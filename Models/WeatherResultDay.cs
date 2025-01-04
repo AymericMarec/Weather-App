@@ -23,25 +23,29 @@ public class WeatherResultDay
         return this.Weather[0].Main;
     }
     public string GetWeatherDescription(){
-        return this.Weather[0].Description;
+        string desc = this.Weather[0].Description;
+        return char.ToUpper(desc[0]) + desc.Substring(1);
+
     }
     public string GetWeatherIcon(){
         return this.Weather[0].Icon;
     }
-    public double GetTemp(){
-        return this.Main.Temp;
+    public string GetTemp(){
+        return Math.Round(this.Main.Temp).ToString() + "°c";
     }
-    public double GetTempMax(){
-        return this.Main.TempMax;
+    public string GetTempMax(){
+        Console.WriteLine(this.Main.Temp_Max);
+        return Math.Round(this.Main.Temp_Max).ToString() + "°c";
     }
-    public double GetTempMin(){
-        return this.Main.TempMin;
+    public string GetTempMin(){
+        return Math.Round(this.Main.Temp_Min).ToString() + "°c";
     }
-    public int GetCloudiness(){
-        return this.Clouds.All;
+
+    public string GetFeelsLike(){
+        return Math.Round(this.Main.Feels_Like).ToString() + "°c";
     }
-    public int GetHumidity(){
-        return this.Main.Humidity;
+    public string GetHumidity(){
+        return this.Main.Humidity.ToString() + "%";
     }
 
 }

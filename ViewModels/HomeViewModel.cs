@@ -6,16 +6,33 @@ namespace GetStartedApp.ViewModels;
 
 public partial class HomeViewModel : ViewModelBase
 {
-    public string Greeting { get; }
+    public string City { get; }
+    public string CurrentTemp { get; }
+    public string TempMax { get; }
+    public string TempMin { get; }
+    public string FeelsLike { get; }
+    public string Humidity { get; }
+    public string WeatherDesc { get; }
     public HomeViewModel()
     {
         List<string> FavCity = Settings.getFavCity();
-        Greeting = FavCity[0];
+        City = FavCity[0];
+        Models.WeatherResultDay result = Models.Api.GetInfoByNameToday(City);
+
+        CurrentTemp = result.GetTemp();
+        TempMax = result.GetTempMax();
+        TempMin = result.GetTempMin();
+        FeelsLike = "Ressenti : " + result.GetFeelsLike();
+        Humidity = result.GetHumidity();
+        WeatherDesc = result.GetWeatherDescription();
+
+
+        
 
         //how to print all Weather for each fav city every 3 hours
         // for(int i = 0 ; i < FavCity.Count;i++){
         //     string city = FavCity[i];
-        //     Models.WeatherResultWeek result = Models.Api.GetInfoByName5Day(city);
+        //     
         //     for(int j = 0; j < result.List.Count;j++){
         //         Console.WriteLine(result.List[j].GetWeather());
         //     }
