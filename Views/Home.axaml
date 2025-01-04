@@ -9,12 +9,224 @@
         Icon="/Assets/avalonia-logo.ico"
         Title="GetStartedApp">
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:HomeViewModel/>
-    </Design.DataContext>
+   <!-- Dégradé appliqué directement à la fenêtre -->
+    <Window.Background>
+        <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+            <!-- Bleu ciel -->
+            <GradientStop Color="#57B8BF" Offset="0.0" />
+            <!-- Blanc -->
+            <GradientStop Color="#DCDCDC" Offset="0.6" />
+            <GradientStop Color="#DCDCDC" Offset="1.0" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!-- Barre latérale à gauche -->
+        <Border Background="#666666" VerticalAlignment="Stretch" Grid.Column="0" />
+
+        <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17"
+        HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="/Assets/img/Loupe.png" Width="20" Height="20" HorizontalAlignment="Center"/>
+                    <TextBox 
+                        Watermark="Rechercher une ville..." 
+                        FontSize="15"
+                        Margin="5,0,0,0"
+                        Width="500" 
+                        Height="20"
+                        VerticalAlignment="Center"
+                        Background="Transparent" 
+                        BorderThickness="0">
+                        <TextBox.Styles>
+                            <Style Selector="TextBox">
+                                <Setter Property="VerticalContentAlignment" Value="Center" />
+                            </Style>
+                        </TextBox.Styles>
+                    </TextBox>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <!-- Contenu principal à droite -->
+        <Border Background="#40666666" CornerRadius="20" Padding="10" Margin="30,65,30,30"
+        HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- Première section -->
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Bordeaux" FontSize="55" HorizontalAlignment="Center" Foreground="White" Margin="0,15,0,0"/>
+                        <Image Source="/Assets/img/Soleil.png" Width="330" Height="320" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Ciel dégagé" FontSize="15" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,5"/>
+                    </StackPanel>
+
+                    <!-- Deuxième section -->
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="7°c" FontSize="100" HorizontalAlignment="Center" Margin="10,0,30,0" Foreground="White"/>
+                        <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10,20,30,0" Foreground="White"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Border Background="Transparent" Margin="30,540,30,30"
+        HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- Première section -->
+                    <Border Background="#40666666" Margin="0,0,20,0" Width="122" CornerRadius="20" Height="122"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20">
+                                <Image Source="/Assets/img/Sunrise.png" Width="28" Height="28" HorizontalAlignment="Center"/>
+                                <TextBlock Text="08:13" FontSize="23" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                            </StackPanel>
+
+                            <!-- Deuxième section -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="/Assets/img/Sunset.png" Width="28" Height="28" HorizontalAlignment="Center"/>
+                                <TextBlock Text="18:49" FontSize="23" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Deuxième section -->
+                    <Border Background="#40666666" Margin="0,0,20,0" Width="122" CornerRadius="20" Height="122"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image Source="/Assets/img/Wet.png" Width="45" Height="45" Margin="0,6,0,0" HorizontalAlignment="Center"/>
+                            <TextBlock Text="1%" FontSize="25" HorizontalAlignment="Center" Margin="0,15,0,0" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#40666666" Margin="0,0,20,0" Width="122" CornerRadius="20" Height="122"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="/Assets/img/Temperature.png" Width="45" HorizontalAlignment="Center"/>
+                            </StackPanel>
+
+                            <!-- Deuxième section -->
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,0,20">
+                                    <TextBlock Text="44°" FontSize="23" HorizontalAlignment="Right" Foreground="White" Margin="0,3,0,0"/>
+                                    <Image Source="/Assets/img/UpArrow.png" Width="26" HorizontalAlignment="Center"/>
+                                </StackPanel>
+
+                                
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <TextBlock Text="-3°" FontSize="23" HorizontalAlignment="Right" Foreground="White" Margin="0,3,0,0"/>
+                                    <Image Source="/Assets/img/DownArrow.png" Width="26" HorizontalAlignment="Center"/>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#40666666" Width="123" CornerRadius="20" Height="122"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="/Assets/img/SouthDirection.png" Width="45" HorizontalAlignment="Center"/>
+                            </StackPanel>
+
+                            <!-- Deuxième section -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Text="44.8° N" FontSize="21" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <TextBlock Text="-2.4° O" FontSize="21" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+
+        <Border Background="#40666666" CornerRadius="20" Padding="10" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,65,35,0" Width="460" Height="597"
+         Grid.Column="2" Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <!-- Première section -->
+                    <Border Background="#77666666" Width="410" CornerRadius="10" Height="98" Margin="0,0,0,16"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Deuxième section -->
+                    <Border Background="#77666666" Width="410" CornerRadius="10" Height="98" Margin="0,0,0,16"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#77666666" Width="410" CornerRadius="10" Height="98" Margin="0,0,0,16"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#77666666" Width="410" CornerRadius="10" Height="98" Margin="0,0,0,16"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#77666666" Width="410" CornerRadius="10" Height="98"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                            <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10" Foreground="White"/>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+    </Grid>
 
 </Window>
