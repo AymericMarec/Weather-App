@@ -31,7 +31,7 @@
         <!-- Barre latérale à gauche -->
         <Border Background="#666666" VerticalAlignment="Stretch" Grid.Column="0" />
 
-        <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17" Width="650" Height="500"
+        <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17"
         HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -62,7 +62,7 @@
             </Grid>
         </Border>
         <!-- Contenu principal à droite -->
-        <Border Background="#40666666" CornerRadius="20" Padding="10" Margin="30,65,30,30"
+        <Border Background="#40666666" CornerRadius="20" Padding="10" Margin="30,65,30,30" Width="550" Height="450"
         HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1">
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -72,18 +72,18 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 
-                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top">
                     <!-- Première section -->
-                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Text="Bordeaux" FontSize="55" HorizontalAlignment="Center" Foreground="White" Margin="0,15,0,0"/>
-                        <Image Source="/Assets/img/Soleil.png" Width="330" Height="320" HorizontalAlignment="Center"/>
-                        <TextBlock Text="Ciel dégagé" FontSize="15" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,5"/>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBlock Text="Bordeaux" FontSize="55" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,15"/>
+                        <Image Source="/Assets/day_icon/Sun.png" Width="300" Height="300" HorizontalAlignment="Center"/>
+                        <TextBlock Text="Ciel dégagé" FontSize="15" HorizontalAlignment="Center" Foreground="White" Margin="0,10,0,0"/>
                     </StackPanel>
 
                     <!-- Deuxième section -->
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <TextBlock Text="7°c" FontSize="100" HorizontalAlignment="Center" Margin="10,0,30,0" Foreground="White"/>
-                        <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="10,20,30,0" Foreground="White"/>
+                        <TextBlock Text="0°c" FontSize="80" HorizontalAlignment="Center" Margin="25,0,0,0" Foreground="White"/>
+                        <TextBlock Text="Ressenti : 5°c" FontSize="15" HorizontalAlignment="Center" Margin="25,20,0,0" Foreground="White"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>
