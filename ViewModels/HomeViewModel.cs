@@ -13,6 +13,11 @@ public partial class HomeViewModel : ViewModelBase
     public string FeelsLike { get; }
     public string Humidity { get; }
     public string WeatherDesc { get; }
+    public string Lat { get; }
+    public string Lon { get; }
+    public string Sunrise { get; }
+    public string Sunset { get; }
+
     public HomeViewModel()
     {
         List<string> FavCity = Settings.getFavCity();
@@ -25,6 +30,10 @@ public partial class HomeViewModel : ViewModelBase
         FeelsLike = "Ressenti : " + result.GetFeelsLike();
         Humidity = result.GetHumidity();
         WeatherDesc = result.GetWeatherDescription();
+        Lat = result.GetLat();
+        Lon = result.GetLon();
+        Sunrise = result.GetSunrise();
+        Sunset = result.GetSunset();
 
 
         

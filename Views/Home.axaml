@@ -76,7 +76,7 @@
                     <!-- Première section -->
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <TextBlock Text="{Binding City}" FontSize="55" HorizontalAlignment="Center" Foreground="White" Margin="0,15,0,0"/>
-                        <Image Source="/Assets/img/Soleil.png" Width="330" Height="320" HorizontalAlignment="Center"/>
+                        <Image Source="/Assets/day_icon/Sun.png" Width="330" Height="320" HorizontalAlignment="Center"/>
                         <TextBlock Text="{Binding WeatherDesc}" FontSize="15" HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,5"/>
                     </StackPanel>
 
@@ -106,13 +106,13 @@
                         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20">
                                 <Image Source="/Assets/img/Sunrise.png" Width="28" Height="28" HorizontalAlignment="Center"/>
-                                <TextBlock Text="08:13" FontSize="23" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                                <TextBlock Text="{Binding Sunrise}" FontSize="23" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
                             </StackPanel>
 
                             <!-- Deuxième section -->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Image Source="/Assets/img/Sunset.png" Width="28" Height="28" HorizontalAlignment="Center"/>
-                                <TextBlock Text="18:49" FontSize="23" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                                <TextBlock Text="{Binding Sunset}" FontSize="23" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -161,11 +161,11 @@
 
                             <!-- Deuxième section -->
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                <TextBlock Text="44.8° N" FontSize="21" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                                <TextBlock Text="{Binding Lat}" FontSize="21" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                <TextBlock Text="-2.4° O" FontSize="21" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
+                                <TextBlock Text="{Binding Lon}" FontSize="21" HorizontalAlignment="Center" Foreground="White" Margin="5,3,0,0"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

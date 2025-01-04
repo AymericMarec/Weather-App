@@ -48,6 +48,27 @@ public class WeatherResultDay
         return this.Main.Humidity.ToString() + "%";
     }
 
+    public string GetLat(){
+        return Math.Round(this.Coord.Lat, 2).ToString() + "° N";
+    }
+    
+    public string GetLon(){
+        return Math.Round(this.Coord.Lon, 2).ToString() + "° E";
+    }
+
+    public string GetSunrise(){
+        DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        dateTime = dateTime.AddSeconds( this.Sys.Sunrise ).ToLocalTime();
+        return dateTime.ToString("HH:mm");
+    }
+
+    public string GetSunset(){
+        DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        dateTime = dateTime.AddSeconds( this.Sys.Sunset ).ToLocalTime();
+        return dateTime.ToString("HH:mm");
+    }
+
+
 }
 
 
