@@ -415,9 +415,6 @@ public partial class HomeViewModel : ViewModelBase
         this.City = searchText.Substring(0, 1).ToUpper() + searchText.Substring(1).ToLower();
         DisplayInfos();
         UpdateFavIcon();
-            Console.WriteLine($"Recherche : {searchText}");
-            this.City = searchText.Substring(0, 1).ToUpper() + searchText.Substring(1).ToLower();;
-            DisplayInfos();
             
     }
 
