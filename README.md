@@ -29,3 +29,7 @@ dotnet run
 (Pour regarder votre version, tapez dotnet --version)
 
 **En cas de problème avec le lancement du projet, contactez l'un des contributeurs : Aymeric MAREC, Noémie DUBLANC, Diane SAUTEREAU DU PART**
+
+### PS :
+On a eu comme beaucoup des problèmes avec gitea , voila l'ancien repo pour voir les premiers commits :  
+https://ytrack.learn.ynov.com/git/maymeric/Weather-App
