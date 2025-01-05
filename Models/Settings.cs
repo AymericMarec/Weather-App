@@ -14,7 +14,6 @@ public class Settings{
 
     public Settings(){
         if(!File.Exists(path)){
-            //default value
             this.Lang = "fr";
             this.FavCity = new List<string> { "Paris" };
             this.Units = "metric"; 
@@ -70,6 +69,12 @@ public class Settings{
         Settings settings = getInfoFile();
         settings.FavCity.Remove(city);
         ChangeFile(settings);
+    }
+
+    public static string getUnits()
+    {
+        Settings settings = getInfoFile();
+        return settings.Units;
     }
 
 }
