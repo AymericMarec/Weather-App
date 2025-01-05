@@ -29,9 +29,20 @@
 
         <!-- Barre latérale à gauche -->
         <Border Background="#666666" VerticalAlignment="Stretch" Grid.Column="0">
-        <Button Content="Click Me"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent">
-        <Image Source="/Assets/img/settings.png" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,45">
+                    <Image Source="/Assets/img/Fav.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
+
+                <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,5">
+                    <Image Source="/Assets/img/settings.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
+            </Grid>
         </Border>
 
         <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17"
