@@ -15,7 +15,8 @@ public partial class Home : Window
 
     private async void OpenSettings(object sender, RoutedEventArgs e)
     {
-        var settingsWindow = new Settings
+        var homeViewModel = DataContext as HomeViewModel;
+        var settingsWindow = new Settings(homeViewModel)
         {
             DataContext = new ViewModels.SettingsViewModel()
         };

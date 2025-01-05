@@ -149,6 +149,7 @@ public partial class HomeViewModel : ViewModelBase
             OnPropertyChanged(nameof(TodayWeatherIcon));
         }
     }
+
     public HomeViewModel()
     {
         List<string> FavCity = Settings.getFavCity();
@@ -180,8 +181,9 @@ public partial class HomeViewModel : ViewModelBase
             DisplayInfos();
     }
 
+
     public void DisplayInfos() {
-        Models.WeatherResultDay result = Models.Api.GetInfoByNameToday(this.City);
+        Models.WeatherResultDay result = Models.Api.GetInfoByNameToday(this.City, Settings.getUnits(),Settings.getLang());
         this.CurrentTemp = result.GetTemp();
         this.TempMax = result.GetTempMax();
         this.TempMin = result.GetTempMin();
