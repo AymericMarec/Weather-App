@@ -28,7 +28,7 @@ public class WeatherResultDay
 
     }
     public string GetWeatherIcon(){
-        return this.Weather[0].Icon;
+        return "Assets/Icon/icon-"+this.Weather[0].Icon+".png";
     }
     public string GetTemp(){
         return Math.Round(this.Main.Temp).ToString() + "°c";

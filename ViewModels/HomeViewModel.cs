@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 
 namespace GetStartedApp.ViewModels;
 
@@ -18,6 +19,7 @@ public partial class HomeViewModel : ViewModelBase
     public string Lon { get; }
     public string Sunrise { get; }
     public string Sunset { get; }
+    public Bitmap TodayWeatherIcon { get; }
     public HomeViewModel()
     {
         List<string> FavCity = Settings.getFavCity();
@@ -34,6 +36,8 @@ public partial class HomeViewModel : ViewModelBase
         Lon = result.GetLon();
         Sunrise = result.GetSunrise();
         Sunset = result.GetSunset();
+        Console.WriteLine(result.GetWeatherIcon());
+        TodayWeatherIcon = new Bitmap(result.GetWeatherIcon());
         BackgroundColor = UpdateBackgroundColor();
         Console.WriteLine(BackgroundColor);
 
