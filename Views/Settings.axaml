@@ -20,13 +20,14 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <StackPanel HorizontalAlignment="Center" 
+        <StackPanel HorizontalAlignment="Right" 
                     VerticalAlignment="Center" 
                     Orientation="Horizontal" 
                     Grid.Row="0" 
-                    Margin="0,0,0,20">
+                    Margin="0,25,50,20">
             <TextBlock FontSize="24" 
                        FontWeight="Bold" 
                        Foreground="#FFFFFF" 
@@ -37,10 +38,11 @@
                     ItemsSource="{Binding Languages}"/>
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Center" 
+        <StackPanel HorizontalAlignment="Right" 
                     VerticalAlignment="Center" 
                     Orientation="Horizontal" 
-                    Grid.Row="1">
+                    Grid.Row="1"
+                    Margin="0,0,50,0">
             <TextBlock FontSize="24" 
                        FontWeight="Bold" 
                        Foreground="#FFFFFF" 
@@ -49,6 +51,16 @@
                     MinWidth="120"
                     SelectedItem="{Binding SelectedUnit}"
                     ItemsSource="{Binding Units}"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    Orientation="Horizontal" 
+                    Grid.Row="2"
+                    Margin="20,20,0,0">
+            <Button FontSize="12" 
+                    Foreground="#FFFFFF" 
+                     Margin="0,0,20,0">Enregistrer</Button>
         </StackPanel>
     </Grid>
 </Window> 
