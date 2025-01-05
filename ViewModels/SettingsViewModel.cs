@@ -36,11 +36,10 @@ public class SettingsViewModel : ViewModelBase
 
     public SettingsViewModel()
     {
-        // Initialiser les sélections en fonction des paramètres actuels
         string currentLang = Models.Settings.getLang();
         SelectedLanguage = currentLang == "fr" ? "Français" : "English";
 
-        string currentUnits = Models.Settings.getUnits(); // Vous devrez ajouter cette méthode
+        string currentUnits = Models.Settings.getUnits(); 
         SelectedUnit = currentUnits == "metric" ? "Celsius" : "Fahrenheit";
     }
 } 
