@@ -98,7 +98,9 @@
 
                 <!-- Première section -->
                 <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="55,0,0,0">
-                    <TextBlock Text="{Binding City}" FontSize="55" HorizontalAlignment="Center" Foreground="White"/>
+                    <Border Width="350" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding City}" FontSize="55" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+                    </Border>
                     <Image Source="{Binding TodayWeatherIcon}" 
                     Width="300" Height="320" HorizontalAlignment="Center"/>
                     <TextBlock Text="{Binding WeatherDesc}" FontSize="15" HorizontalAlignment="Center" Margin="15" Foreground="White"/>
