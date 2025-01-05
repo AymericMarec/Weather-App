@@ -12,16 +12,16 @@ public class WeatherResultWeek
     public List<WeatherResultDay> List { get; set; }
     public City City { get; set; }
 
-    public Dictionary<string, WeatherResultDay> GetDataMidTime(){
-        Dictionary<string, WeatherResultDay> Weather = new Dictionary<string, WeatherResultDay>();
+    public List<Tuple<string, WeatherResultDay>> GetDataMidTime(){
+
+        List<Tuple<string, WeatherResultDay>> Weather = new List<Tuple<string, WeatherResultDay>>();
         foreach(WeatherResultDay weather in List){
             int Time = weather.Dt;
             DateTime dateTime = DateTimeOffset.FromUnixTimeSeconds(Time).DateTime;
             string dayName = dateTime.ToString("dddd");
             string hour = dateTime.ToString("HH");
             if(hour == "12"){
-                Console.WriteLine(dayName+" : "+weather.GetTemp());
-                Weather.Add(dayName,weather);
+                Weather.Add(new Tuple<string, WeatherResultDay>(dayName, weather));
             }
         }
         return Weather;

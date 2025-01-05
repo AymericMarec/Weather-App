@@ -11,7 +11,6 @@ public static class Api{
         string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={apiKey}&units={units}&lang={lang}";
         string data = FetchApiData(apiUrl);
         WeatherResultDay WeatherResultDay = JsonConvert.DeserializeObject<WeatherResultDay>(data);
-        Console.WriteLine(data);
         return WeatherResultDay;
     }
     public static WeatherResultWeek GetInfoByName5Day(string CityName,string units="metric",string lang="fr"){
@@ -19,7 +18,6 @@ public static class Api{
         string apiUrl = $"https://api.openweathermap.org/data/2.5/forecast?q={CityName}&appid={apiKey}&units={units}&lang={lang}";
         string data = FetchApiData(apiUrl);
         WeatherResultWeek WeatherResultWeek = JsonConvert.DeserializeObject<WeatherResultWeek>(data);
-        Console.WriteLine(data);
         return WeatherResultWeek;
     }
 
