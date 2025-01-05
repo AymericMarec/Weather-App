@@ -368,7 +368,6 @@ public partial class HomeViewModel : ViewModelBase
 
     private Color UpdateBackgroundColor(char code)
     {
-        Console.WriteLine(code);
         if (code == 'd')
         {
             return Color.Parse("#FF57B8BF");
@@ -381,7 +380,6 @@ public partial class HomeViewModel : ViewModelBase
 
     public void HandleSearch(string searchText)
     {
-            Console.WriteLine($"Recherche : {searchText}");
             this.City = searchText.Substring(0, 1).ToUpper() + searchText.Substring(1).ToLower();;
             DisplayInfos();
     }

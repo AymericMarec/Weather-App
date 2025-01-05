@@ -21,7 +21,6 @@ public class WeatherResultWeek
             string dayName = dateTime.ToString("dddd");
             string hour = dateTime.ToString("HH");
             if(hour == "12"){
-                Console.WriteLine(dayName+" : "+weather.GetTemp());
                 Weather.Add(new Tuple<string, WeatherResultDay>(dayName, weather));
             }
         }
