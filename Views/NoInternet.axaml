@@ -9,15 +9,9 @@
         Title="ERROR"
         Width="1150"
         Height="690"
-        CanResize="False">
+        CanResize="False"
+        Background="#666666">
          
-    <Window.Background>
-        <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
-            <GradientStop Color="#FF57B8BF" Offset="0.0" />
-            <GradientStop Color="#FFDCDCDC" Offset="0.5" />
-            <GradientStop Color="#FFDCDCDC" Offset="1.0" />
-        </LinearGradientBrush>
-    </Window.Background>
 
     <TextBlock Text="No Internet connection" FontSize="55" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
 
