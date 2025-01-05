@@ -13,13 +13,12 @@
         CanResize="False">
 
    <!-- Dégradé appliqué directement à la fenêtre -->
+         
     <Window.Background>
         <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
-            <!-- Bleu ciel -->
-            <GradientStop Color="#57B8BF" Offset="0.0" />
-            <!-- Blanc -->
-            <GradientStop Color="#DCDCDC" Offset="0.6" />
-            <GradientStop Color="#DCDCDC" Offset="1.0" />
+            <GradientStop Color="{Binding BackgroundColor}" Offset="0.0" />
+            <GradientStop Color="#FFDCDCDC" Offset="0.5" />
+            <GradientStop Color="#FFDCDCDC" Offset="1.0" />
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -29,7 +28,11 @@
         </Grid.ColumnDefinitions>
 
         <!-- Barre latérale à gauche -->
-        <Border Background="#666666" VerticalAlignment="Stretch" Grid.Column="0" />
+        <Border Background="#666666" VerticalAlignment="Stretch" Grid.Column="0">
+        <Button Content="Click Me"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent">
+        <Image Source="/Assets/img/settings.png" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+        </Border>
 
         <Border Background="#40666666" CornerRadius="10" Padding="10,0,10,0" Margin="17"
         HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0">
@@ -76,9 +79,9 @@
                 <!-- Première section -->
                 <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="55,0,0,0">
                     <TextBlock Text="{Binding City}" FontSize="55" HorizontalAlignment="Center" Foreground="White"/>
-                    <Image Source="{Binding WeatherDesc, Converter={StaticResource WeatherDescriptionToImageConverter}}" 
+                    <Image Source="/Assets/day_icon/thunderstrom.png" 
                     Width="300" Height="320" HorizontalAlignment="Center"/>
-                    <TextBlock Text="{Binding WeatherDesc}" FontSize="15" HorizontalAlignment="Center" Foreground="White"/>
+                    <TextBlock Text="{Binding WeatherDesc}" FontSize="15" HorizontalAlignment="Center" Margin="15" Foreground="White"/>
                 </StackPanel>
 
                 <!-- Deuxième section -->
