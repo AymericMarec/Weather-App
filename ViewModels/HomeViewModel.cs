@@ -157,13 +157,10 @@ public partial class HomeViewModel : ViewModelBase
         DisplayInfos(); 
     }
 
-    private Color UpdateBackgroundColor()
+    private Color UpdateBackgroundColor(char code)
     {
-        DateTime currentTime = DateTime.Now;
-        TimeSpan sunriseTime = TimeSpan.Parse(Sunrise);
-        TimeSpan sunsetTime = TimeSpan.Parse(Sunset);
-
-        if (currentTime.TimeOfDay >= sunriseTime && currentTime.TimeOfDay <= sunsetTime)
+        Console.WriteLine(code);
+        if (code == 'd')
         {
             return Color.Parse("#FF57B8BF");
         }
@@ -194,6 +191,6 @@ public partial class HomeViewModel : ViewModelBase
         this.Sunrise = result.GetSunrise();
         this.Sunset = result.GetSunset();
         this.TodayWeatherIcon = new Bitmap(result.GetWeatherIcon());
-        this.BackgroundColor = UpdateBackgroundColor();
+        this.BackgroundColor = UpdateBackgroundColor(result.GetDayOrNight());
     }
 }

@@ -11,8 +11,6 @@
         Width="1150"
         Height="690"
         CanResize="False">
-
-   <!-- Dégradé appliqué directement à la fenêtre -->
          
     <Window.Background>
         <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
