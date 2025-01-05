@@ -387,11 +387,11 @@ public partial class HomeViewModel : ViewModelBase
 
     private void UpdateFavIcon()
     {
-        List<string> favCities = Settings.getFavCity();
+        List<string> favCities = Models.Settings.getFavCity();
         string imagePath = favCities.Contains(City) 
             ? "/Assets/img/FavOn.png" 
             : "/Assets/img/Fav.png";
-        
+    
         // Load image from embedded resource
         var uri = new Uri($"avares://GetStartedApp{imagePath}");
         FavIcon = new Bitmap(AssetLoader.Open(uri));
@@ -441,7 +441,7 @@ public partial class HomeViewModel : ViewModelBase
         this.TodayWeatherIcon = new Bitmap(result.GetWeatherIcon());
         this.BackgroundColor = UpdateBackgroundColor(result.GetDayOrNight());
 
-        Models.WeatherResultWeek weekresult = Models.Api.GetInfoByName5Day(this.City, Settings.getUnits(),Settings.getLang());
+        Models.WeatherResultWeek weekresult = Models.Api.GetInfoByName5Day(this.City, Models.Settings.getUnits(),Models.Settings.getLang());
         List<Tuple<string, WeatherResultDay>> WeatherWeek =  weekresult.GetDataMidTime();
 
         this.TempDay1 = WeatherWeek[0].Item2.GetTemp();
@@ -478,11 +478,11 @@ public partial class HomeViewModel : ViewModelBase
 
     public void ToggleFavorite()
     {
-        List<string> favCities = Settings.getFavCity();
+        List<string> favCities = Models.Settings.getFavCity();
         if (!favCities.Contains(City))
         {
             // On peut seulement ajouter une nouvelle ville favorite
-            Settings.AddFav(City);
+            Models.Settings.AddFav(City);
             UpdateFavIcon();
         }
         // Si la ville est déjà en favori, on ne fait rien
