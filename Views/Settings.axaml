@@ -9,17 +9,41 @@
         Title="Settings"
         Width="400"
         Height="300"
-        WindowStartupLocation="CenterOwner">
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        Background="#666666">
     
     <Grid Margin="20">
-        <StackPanel>
-            <TextBlock Text="Settings" 
-                     FontSize="24" 
-                     FontWeight="Bold" 
-                     Margin="0,0,0,20"/>
-            <!-- Add your settings controls here -->
-            <TextBlock Text="This is a simple settings page" 
-                     FontSize="16"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel HorizontalAlignment="Right" 
+                    VerticalAlignment="Center" 
+                    Orientation="Horizontal" 
+                    Grid.Row="0" 
+                    Margin="0,35,50,20">
+            <TextBlock FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="#FFFFFF" 
+                       Margin="0,0,20,0">Language : </TextBlock>
+            <ListBox x:Name="Language" MinWidth="120"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right" 
+                    VerticalAlignment="Center" 
+                    Orientation="Horizontal" 
+                    Grid.Row="1"
+                    Margin="0,0,50,0">
+            <TextBlock FontSize="24" 
+                       FontWeight="Bold" 
+                       Foreground="#FFFFFF" 
+                       Margin="0,0,20,0">Unité : </TextBlock>
+            <ListBox x:Name="Unit" MinWidth="120"/>
         </StackPanel>
     </Grid>
 </Window> 
