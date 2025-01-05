@@ -465,14 +465,12 @@ public partial class HomeViewModel : ViewModelBase
     public void ToggleFavorite()
     {
         List<string> favCities = Settings.getFavCity();
-        if (favCities.Contains(City))
+        if (!favCities.Contains(City))
         {
-            Settings.RemoveFav(City);
-        }
-        else
-        {
+            // On peut seulement ajouter une nouvelle ville favorite
             Settings.AddFav(City);
+            UpdateFavIcon();
         }
-        UpdateFavIcon();
+        // Si la ville est déjà en favori, on ne fait rien
     }
 }
