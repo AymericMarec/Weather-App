@@ -73,7 +73,8 @@
                         Height="20"
                         VerticalAlignment="Center"
                         Background="Transparent" 
-                        BorderThickness="0">
+                        BorderThickness="0"
+                        KeyDown="TextBox_KeyDown">
                         <TextBox.Styles>
                             <Style Selector="TextBox">
                                 <Setter Property="VerticalContentAlignment" Value="Center" />
