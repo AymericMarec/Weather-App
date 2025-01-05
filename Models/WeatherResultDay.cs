@@ -30,6 +30,11 @@ public class WeatherResultDay
     public string GetWeatherIcon(){
         return "Assets/Icon/icon-"+this.Weather[0].Icon+".png";
     }
+
+    public char GetDayOrNight(){
+        Console.WriteLine(this.Weather[0].Icon);
+        return this.Weather[0].Icon[2];
+    }
     public string GetTemp(){
         return Math.Round(this.Main.Temp).ToString() + "°c";
     }

@@ -11,8 +11,6 @@
         Width="1150"
         Height="690"
         CanResize="False">
-
-   <!-- Dégradé appliqué directement à la fenêtre -->
          
     <Window.Background>
         <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
@@ -35,7 +33,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,45">
+                <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,45" Click="ChangeFav">
                     <Image Source="/Assets/img/Fav.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
 
@@ -98,7 +96,9 @@
 
                 <!-- Première section -->
                 <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="55,0,0,0">
-                    <TextBlock Text="{Binding City}" FontSize="55" HorizontalAlignment="Center" Foreground="White"/>
+                    <Border Width="350" HorizontalAlignment="Center">
+                        <TextBlock Text="{Binding City}" FontSize="55" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+                    </Border>
                     <Image Source="{Binding TodayWeatherIcon}" 
                     Width="300" Height="320" HorizontalAlignment="Center"/>
                     <TextBlock Text="{Binding WeatherDesc}" FontSize="15" HorizontalAlignment="Center" Margin="15" Foreground="White"/>

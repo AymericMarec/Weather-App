@@ -65,9 +65,9 @@ public class Settings{
         ChangeFile(settings);
     }
 
-    public static void RemoveFav(string city){
+    public static void RemoveFav(){
         Settings settings = getInfoFile();
-        settings.FavCity.Remove(city);
+        settings.FavCity.Remove(settings.FavCity[0]);
         ChangeFile(settings);
     }
 
