@@ -24,10 +24,7 @@ public partial class App : Application
 
             // Main Window est la Fenetre de Départ et initialisé ici
 
-            desktop.MainWindow = new Home
-            {
-                DataContext = new HomeViewModel(),
-            };
+            desktop.MainWindow = new Home();
         }
 
         base.OnFrameworkInitializationCompleted();

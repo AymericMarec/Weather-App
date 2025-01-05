@@ -13,12 +13,28 @@ public partial class Home : Window
     public Home()
     {
         InitializeComponent();
+        DataContext = new HomeViewModel(this);
+        this.Closed += (sender, e) =>
+        {
+            // Libère les ressources du ViewModel si nécessaire
+            if (DataContext is IDisposable disposableViewModel)
+            {
+                disposableViewModel.Dispose();
+            }
+        };
     }
 
     private void ChangeFav(object? sender, RoutedEventArgs e) {
         var homeViewModel = DataContext as HomeViewModel;
         Models.Settings.RemoveFav();
         Models.Settings.AddFav(homeViewModel.City);
+    }
+
+    public void OpenNoInternet()
+    {
+        var noInternetWindow = new NoInternet();
+        noInternetWindow.Show();
+        this.WindowState = WindowState.Minimized; 
     }
 
     private async void OpenSettings(object sender, RoutedEventArgs e)

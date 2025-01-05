@@ -10,6 +10,11 @@ public static class Api{
         string apiKey = Environment.GetEnvironmentVariable("API_KEY");
         string apiUrl = $"https://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={apiKey}&units={units}&lang={lang}";
         string data = FetchApiData(apiUrl);
+        if (data == null)
+        {
+            Console.WriteLine("Erreur : Pas d'internet ou autre problème de connexion.");
+            return null;
+        }
         WeatherResultDay WeatherResultDay = JsonConvert.DeserializeObject<WeatherResultDay>(data);
         Console.WriteLine(data);
         return WeatherResultDay;
@@ -18,6 +23,11 @@ public static class Api{
         string apiKey = Environment.GetEnvironmentVariable("API_KEY");
         string apiUrl = $"https://api.openweathermap.org/data/2.5/forecast?q={CityName}&appid={apiKey}&units={units}&lang={lang}";
         string data = FetchApiData(apiUrl);
+        if (data == null)
+        {
+            Console.WriteLine("Erreur : Pas d'internet ou autre problème de connexion.");
+            return null;
+        }
         WeatherResultWeek WeatherResultWeek = JsonConvert.DeserializeObject<WeatherResultWeek>(data);
         Console.WriteLine(data);
         return WeatherResultWeek;
@@ -48,4 +58,5 @@ public static class Api{
             }
         }
     }
+
 }

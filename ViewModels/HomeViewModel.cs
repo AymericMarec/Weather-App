@@ -1,5 +1,6 @@
 ﻿using Models;
 using System;
+using GetStartedApp.Views;
 using System.Collections.Generic;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
@@ -150,11 +151,16 @@ public partial class HomeViewModel : ViewModelBase
         }
     }
 
-    public HomeViewModel()
+    private GetStartedApp.Views.Home _home;
+
+    public HomeViewModel(GetStartedApp.Views.Home home)
     {
-        List<string> FavCity = Settings.getFavCity();
+        _home = home;
+        List<string> FavCity = Models.Settings.getFavCity();
         City = FavCity[0];
         DisplayInfos(); 
+        
+
     }
 
     private Color UpdateBackgroundColor(char code)
@@ -175,11 +181,16 @@ public partial class HomeViewModel : ViewModelBase
             Console.WriteLine($"Recherche : {searchText}");
             this.City = searchText.Substring(0, 1).ToUpper() + searchText.Substring(1).ToLower();;
             DisplayInfos();
+            
     }
 
 
     public void DisplayInfos() {
-        Models.WeatherResultDay result = Models.Api.GetInfoByNameToday(this.City, Settings.getUnits(),Settings.getLang());
+        Models.WeatherResultDay result = Models.Api.GetInfoByNameToday(this.City, Models.Settings.getUnits(), Models.Settings.getLang());
+        if (result == null) {
+            _home.OpenNoInternet();
+            return;
+        }
         this.CurrentTemp = result.GetTemp();
         this.TempMax = result.GetTempMax();
         this.TempMin = result.GetTempMin();
