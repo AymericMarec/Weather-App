@@ -13,7 +13,7 @@
         Background="#666666">
          
 
-    <TextBlock Text="No Internet connection" FontSize="55" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
+    <TextBlock Text="Erreur : ville non trouvé. &#x0a;Vous êtes sûr qu'elle existe ? &#x0a;Vérifiez votre connection internet." FontSize="55" HorizontalAlignment="Center" Foreground="White" VerticalAlignment="Center"/>
 
 
 </Window>
