@@ -39,8 +39,16 @@
                     <Image Source="/Assets/img/Fav.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
 
-                <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,5">
-                    <Image Source="/Assets/img/settings.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button HorizontalAlignment="Center" 
+                        VerticalAlignment="Bottom" 
+                        Background="Transparent" 
+                        Margin="0,0,0,5"
+                        Click="OpenSettings">
+                    <Image Source="/Assets/img/settings.png" 
+                           Width="25" 
+                           Height="25" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
                 </Button>
             </Grid>
         </Border>
