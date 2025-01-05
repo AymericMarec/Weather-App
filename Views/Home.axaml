@@ -34,7 +34,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,45" Click="ChangeFav">
-                    <Image Source="/Assets/img/Fav.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="{Binding FavIcon}" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
 
                 <Button HorizontalAlignment="Center" 
@@ -223,13 +223,13 @@
                                 <ColumnDefinition Width="Auto"/> <!-- Pour l'Image -->
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                            Grid.Column="1">
-                                <TextBlock Text="Lundi à 12h" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
-                                <TextBlock Text="Nuageux" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="{Binding TempDay1}" Width="145" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Grid.Column="1" Margin="0,0,15,0">
+                                <TextBlock Text="{Binding NameDay1}" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                                <TextBlock Text="{Binding DescriptionDay1}" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
-                            <Image Source="/Assets/Icon/icon-01d.png" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
+                            <Image Source="{Binding IconDay1}" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
                         </Grid>
                     </Border>
 
@@ -245,13 +245,13 @@
                                 <ColumnDefinition Width="Auto"/> <!-- Pour l'Image -->
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
+                            <TextBlock Text="{Binding TempDay2}" Width="145" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                            Grid.Column="1">
-                                <TextBlock Text="Lundi à 12h" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
-                                <TextBlock Text="Nuageux" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
+                            Grid.Column="1" Margin="0,0,15,0">
+                                <TextBlock Text="{Binding NameDay2}" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                                <TextBlock Text="{Binding DescriptionDay2}" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
-                            <Image Source="/Assets/Icon/icon-01d.png" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
+                            <Image Source="{Binding IconDay2}" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
                         </Grid>
                     </Border>
                     
@@ -266,13 +266,13 @@
                                 <ColumnDefinition Width="Auto"/> <!-- Pour l'Image -->
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
+                            <TextBlock Text="{Binding TempDay3}" Width="145" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                            Grid.Column="1">
-                                <TextBlock Text="Lundi à 12h" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
-                                <TextBlock Text="Nuageux" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
+                            Grid.Column="1" Margin="0,0,15,0">
+                                <TextBlock Text="{Binding NameDay3}" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                                <TextBlock Text="{Binding DescriptionDay3}" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
-                            <Image Source="/Assets/Icon/icon-01d.png" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
+                            <Image Source="{Binding IconDay3}" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
                         </Grid>
                     </Border>
 
@@ -287,13 +287,13 @@
                                 <ColumnDefinition Width="Auto"/> <!-- Pour l'Image -->
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
+                            <TextBlock Text="{Binding TempDay4}" Width="145" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                            Grid.Column="1">
-                                <TextBlock Text="Lundi à 12h" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
-                                <TextBlock Text="Nuageux" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
+                            Grid.Column="1" Margin="0,0,15,0">
+                                <TextBlock Text="{Binding NameDay4}" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                                <TextBlock Text="{Binding DescriptionDay4}" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
-                            <Image Source="/Assets/Icon/icon-01d.png" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
+                            <Image Source="{Binding IconDay4}" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
                         </Grid>
                     </Border>
 
@@ -308,13 +308,13 @@
                                 <ColumnDefinition Width="Auto"/> <!-- Pour l'Image -->
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Text="7°c" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
+                            <TextBlock Text="{Binding TempDay5}" Width="145" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="25,0,0,0" Foreground="White" Grid.Column="0"/>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                            Grid.Column="1">
-                                <TextBlock Text="Lundi à 12h" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
-                                <TextBlock Text="Nuageux" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
+                            Grid.Column="1" Margin="0,0,15,0">
+                                <TextBlock Text="{Binding NameDay5}" FontSize="22" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                                <TextBlock Text="{Binding DescriptionDay5}" FontSize="13" HorizontalAlignment="Center" Foreground="White"/>
                             </StackPanel>
-                            <Image Source="/Assets/Icon/icon-01d.png" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
+                            <Image Source="{Binding IconDay5}" Width="65" HorizontalAlignment="Right" Margin="0,0,25,0" Grid.Column="2"/>
                         </Grid>
                     </Border>
                 </StackPanel>

@@ -16,7 +16,6 @@ public static class Api{
             return null;
         }
         WeatherResultDay WeatherResultDay = JsonConvert.DeserializeObject<WeatherResultDay>(data);
-        Console.WriteLine(data);
         return WeatherResultDay;
     }
     public static WeatherResultWeek GetInfoByName5Day(string CityName,string units="metric",string lang="fr"){
@@ -29,7 +28,6 @@ public static class Api{
             return null;
         }
         WeatherResultWeek WeatherResultWeek = JsonConvert.DeserializeObject<WeatherResultWeek>(data);
-        Console.WriteLine(data);
         return WeatherResultWeek;
     }
 

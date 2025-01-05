@@ -32,22 +32,36 @@ public class WeatherResultDay
     }
 
     public char GetDayOrNight(){
-        Console.WriteLine(this.Weather[0].Icon);
         return this.Weather[0].Icon[2];
     }
     public string GetTemp(){
-        return Math.Round(this.Main.Temp).ToString() + "°c";
+        if(Settings.getUnits() == "metric"){
+            return Math.Round(this.Main.Temp).ToString() + "°c";
+        }else{
+            return Math.Round(this.Main.Temp).ToString() + "°F";
+        }
     }
     public string GetTempMax(){
-        Console.WriteLine(this.Main.Temp_Max);
-        return Math.Round(this.Main.Temp_Max).ToString() + "°c";
+        if(Settings.getUnits() == "metric"){
+            return Math.Round(this.Main.Temp_Max).ToString() + "°c";
+        }else{
+            return Math.Round(this.Main.Temp_Max).ToString() + "°F";
+        }
     }
     public string GetTempMin(){
-        return Math.Round(this.Main.Temp_Min).ToString() + "°c";
+        if(Settings.getUnits() == "metric"){
+            return Math.Round(this.Main.Temp_Min).ToString() + "°c";
+        }else{
+            return Math.Round(this.Main.Temp_Min).ToString() + "°F";
+        }
     }
 
     public string GetFeelsLike(){
-        return Math.Round(this.Main.Feels_Like).ToString() + "°c";
+        if(Settings.getUnits() == "metric"){
+            return Math.Round(this.Main.Feels_Like).ToString() + "°c";
+        }else{
+            return Math.Round(this.Main.Feels_Like).ToString() + "°F";
+        }
     }
     public string GetHumidity(){
         return this.Main.Humidity.ToString() + "%";

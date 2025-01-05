@@ -24,10 +24,13 @@ public partial class Home : Window
         };
     }
 
-    private void ChangeFav(object? sender, RoutedEventArgs e) {
+    private void ChangeFav(object? sender, RoutedEventArgs e) 
+    {
         var homeViewModel = DataContext as HomeViewModel;
-        Models.Settings.RemoveFav();
-        Models.Settings.AddFav(homeViewModel.City);
+        if (homeViewModel != null)
+        {
+            homeViewModel.ToggleFavorite();
+        }
     }
 
     public void OpenNoInternet()
