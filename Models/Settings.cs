@@ -72,4 +72,10 @@ public class Settings{
         ChangeFile(settings);
     }
 
+    public static string getUnits()
+    {
+        Settings settings = getInfoFile();
+        return settings.Units;
+    }
+
 }
