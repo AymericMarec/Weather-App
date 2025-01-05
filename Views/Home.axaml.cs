@@ -2,15 +2,23 @@ using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Input;
 using System;
+using Models;
 using GetStartedApp.ViewModels;
 
 namespace GetStartedApp.Views;
 
 public partial class Home : Window
 {
+
     public Home()
     {
         InitializeComponent();
+    }
+
+    private void ChangeFav(object? sender, RoutedEventArgs e) {
+        var homeViewModel = DataContext as HomeViewModel;
+        Models.Settings.RemoveFav();
+        Models.Settings.AddFav(homeViewModel.City);
     }
 
     private async void OpenSettings(object sender, RoutedEventArgs e)

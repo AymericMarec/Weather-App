@@ -157,7 +157,6 @@ public partial class HomeViewModel : ViewModelBase
         DisplayInfos(); 
     }
 
-
     private Color UpdateBackgroundColor()
     {
         DateTime currentTime = DateTime.Now;
@@ -197,7 +196,4 @@ public partial class HomeViewModel : ViewModelBase
         this.TodayWeatherIcon = new Bitmap(result.GetWeatherIcon());
         this.BackgroundColor = UpdateBackgroundColor();
     }
-
-
-    // Console.WriteLine("coucou");
 }
