@@ -15,10 +15,13 @@ public partial class Home : Window
         InitializeComponent();
     }
 
-    private void ChangeFav(object? sender, RoutedEventArgs e) {
+    private void ChangeFav(object? sender, RoutedEventArgs e) 
+    {
         var homeViewModel = DataContext as HomeViewModel;
-        Models.Settings.RemoveFav();
-        Models.Settings.AddFav(homeViewModel.City);
+        if (homeViewModel != null)
+        {
+            homeViewModel.ToggleFavorite();
+        }
     }
 
     private async void OpenSettings(object sender, RoutedEventArgs e)

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 namespace GetStartedApp.ViewModels;
 
@@ -150,11 +151,35 @@ public partial class HomeViewModel : ViewModelBase
         }
     }
 
+    private Bitmap _favIcon;
+    public Bitmap FavIcon
+    {
+        get { return _favIcon; }
+        set
+        {
+            _favIcon = value;
+            OnPropertyChanged(nameof(FavIcon));
+        }
+    }
+
     public HomeViewModel()
     {
         List<string> FavCity = Settings.getFavCity();
         City = FavCity[0];
+        UpdateFavIcon();
         DisplayInfos(); 
+    }
+
+    private void UpdateFavIcon()
+    {
+        List<string> favCities = Settings.getFavCity();
+        string imagePath = favCities.Contains(City) 
+            ? "/Assets/img/FavOn.png" 
+            : "/Assets/img/Fav.png";
+        
+        // Load image from embedded resource
+        var uri = new Uri($"avares://GetStartedApp{imagePath}");
+        FavIcon = new Bitmap(AssetLoader.Open(uri));
     }
 
     private Color UpdateBackgroundColor(char code)
@@ -172,9 +197,10 @@ public partial class HomeViewModel : ViewModelBase
 
     public void HandleSearch(string searchText)
     {
-            Console.WriteLine($"Recherche : {searchText}");
-            this.City = searchText.Substring(0, 1).ToUpper() + searchText.Substring(1).ToLower();;
-            DisplayInfos();
+        Console.WriteLine($"Recherche : {searchText}");
+        this.City = searchText.Substring(0, 1).ToUpper() + searchText.Substring(1).ToLower();
+        DisplayInfos();
+        UpdateFavIcon();
     }
 
 
@@ -192,5 +218,19 @@ public partial class HomeViewModel : ViewModelBase
         this.Sunset = result.GetSunset();
         this.TodayWeatherIcon = new Bitmap(result.GetWeatherIcon());
         this.BackgroundColor = UpdateBackgroundColor(result.GetDayOrNight());
+    }
+
+    public void ToggleFavorite()
+    {
+        List<string> favCities = Settings.getFavCity();
+        if (favCities.Contains(City))
+        {
+            Settings.RemoveFav(City);
+        }
+        else
+        {
+            Settings.AddFav(City);
+        }
+        UpdateFavIcon();
     }
 }

@@ -34,7 +34,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="Transparent" Margin="0,0,0,45" Click="ChangeFav">
-                    <Image Source="/Assets/img/Fav.png" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="{Binding FavIcon}" Width="25" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 </Button>
 
                 <Button HorizontalAlignment="Center" 
