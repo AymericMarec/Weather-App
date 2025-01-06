@@ -26,6 +26,7 @@ public partial class Settings : Window
     }
 
     private void CloseSettings(object sender, RoutedEventArgs e) {
+        
         _homeViewModel.DisplayInfos();
         this.Close();
     }
