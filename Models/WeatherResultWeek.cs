@@ -19,6 +19,7 @@ public class WeatherResultWeek
             int Time = weather.Dt;
             DateTime dateTime = DateTimeOffset.FromUnixTimeSeconds(Time).DateTime;
             string dayName = dateTime.ToString("dddd");
+            dayName = char.ToUpper(dayName[0]) + dayName.Substring(1);
             string hour = dateTime.ToString("HH");
             if(hour == "12"){
                 Weather.Add(new Tuple<string, WeatherResultDay>(dayName, weather));
